@@ -82,73 +82,7 @@ This project is a **WhatsApp-based Virtual Try-On Bot** built using **FastAPI**,
     ```
     https://your-server-url/whatsapp
     ```
-
-## Deployment with Docker
-
-### DigitalOcean Droplet Setup
-1. **Create a DigitalOcean Droplet** with Docker pre-installed or install Docker manually by following [Docker's installation guide](https://docs.docker.com/engine/install/).
-
-2. **Clone your project on the droplet**:
-   ```bash
-   git clone https://github.com/your-username/whatsapp-virtual-try-on.git
-   cd whatsapp-virtual-try-on
-   ```
-
-3. **Create a Dockerfile**:
-   The `Dockerfile` should look something like this:
-
-   ```dockerfile
-   FROM python:3.9-slim
-
-   WORKDIR /app
-
-   COPY requirements.txt .
-
-   RUN pip install --no-cache-dir -r requirements.txt
-
-   COPY . .
-
-   CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
-   ```
-
-4. **Create a `docker-compose.yml` file** for easy management of containers:
-   ```yaml
-   version: '3'
-   services:
-     app:
-       build: .
-       ports:
-         - "8000:8000"
-       env_file: .env
-   ```
-
-5. **Build and run the Docker container**:
-   ```bash
-   docker-compose up --build -d
-   ```
-
-6. **Access your application**:
-   Once the container is running, your application will be available on your droplet’s IP address at port `8000` (or another port if specified).
-
-7. **Set up SSL with Let's Encrypt (Optional but recommended)**:
-   Use a reverse proxy (like **Nginx**) and set up SSL using **Let's Encrypt** for secure access to your bot.
-
-### Docker Commands:
-- **To rebuild and restart the container**:
-  ```bash
-  docker-compose up --build -d
-  ```
-
-- **To view logs**:
-  ```bash
-  docker-compose logs
-  ```
-
-- **To stop the container**:
-  ```bash
-  docker-compose down
-  ```
-
+    
 ## Environment Variables
 The following environment variables are required for the project:
     TWILIO_ACCOUNT_SID=your_twilio_account_sid
