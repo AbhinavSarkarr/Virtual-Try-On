@@ -33,8 +33,7 @@ TWILIO_PHONE_NUMBER = os.getenv('TWILIO_PHONE_NUMBER')
 twilio_client = TwilioClient(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 # Gradio client configuration
-gradio_client = GradioClient("Nymbo/Virtual-Try-On")
-
+gradio_client = GradioClient("Nymbo/Virtual-Try-On", hf_token="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")
 #dict for storing the current user state
 user_states = {}
 
