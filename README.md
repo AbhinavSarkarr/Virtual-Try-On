@@ -122,9 +122,4 @@ Create a `.env` file in your project directory to manage these variables.
 ## Debugging and Logs
 - **Log statements** have been added throughout the code to trace image processing steps, API calls, and possible errors. Check the console output for debugging information.
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
----
-
-Feel free to further modify this `README.md` based on additional features, improvements, or changes in your project!
