@@ -6,3 +6,4 @@ Pillow
 python-dotenv
 Requests
 twilio
+uvicorn
