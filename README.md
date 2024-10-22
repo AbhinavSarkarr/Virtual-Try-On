@@ -4,7 +4,7 @@ Here’s the updated `README.md` file that includes details about deployment on 
 
 # WhatsApp Virtual Try-On Bot
 
-This project is a **WhatsApp-based Virtual Try-On Bot** built using **FastAPI**, **Twilio**, **Gradio**, and **Cloudinary**. The bot allows users to send images via WhatsApp, simulates virtual try-ons using a pre-trained model, and sends the processed image back to the user. The application is deployed on a **DigitalOcean Droplet** using **Docker**.
+This project is a **WhatsApp-based Virtual Try-On Bot** built using **FastAPI**, **Twilio**, **Gradio**, and **Cloudinary**. The bot allows users to send images via WhatsApp, simulates virtual try-ons using a pre-trained model, and sends the processed image back to the user. The application is deployed on Render.
 
 ## Table of Contents
 - [Features](#features)
@@ -40,7 +40,7 @@ This project is a **WhatsApp-based Virtual Try-On Bot** built using **FastAPI**,
 - Twilio Account with a WhatsApp-enabled number
 - Cloudinary Account
 - Gradio model (you can use the one you integrated or modify as needed)
-- Docker and Docker Compose
+
 
 ### Steps
 1. **Clone the repository:**
