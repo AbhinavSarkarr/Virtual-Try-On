@@ -1,10 +1,11 @@
-Here’s the updated `README.md` file that includes details about deployment on a DigitalOcean droplet using Docker:
-
----
-
 # WhatsApp Virtual Try-On Bot
 
-This project is a **WhatsApp-based Virtual Try-On Bot** built using **FastAPI**, **Twilio**, **Gradio**, and **Cloudinary**. The bot allows users to send images via WhatsApp, simulates virtual try-ons using a pre-trained model, and sends the processed image back to the user. The application is deployed on Render.
+A **WhatsApp-based Virtual Try-On Bot** built using **FastAPI**, **Twilio**, **Gradio**, and **Cloudinary**. Users can send images via WhatsApp to virtually try on garments using AI-powered image processing, with results delivered instantly back to their chat.
+
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
 - [Features](#features)
@@ -121,5 +122,57 @@ Create a `.env` file in your project directory to manage these variables.
 
 ## Debugging and Logs
 - **Log statements** have been added throughout the code to trace image processing steps, API calls, and possible errors. Check the console output for debugging information.
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    WhatsApp Virtual Try-On Bot                       │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐          │
+│  │   WhatsApp   │    │    Twilio    │    │   FastAPI    │          │
+│  │    User      │◄──►│     API      │◄──►│   Backend    │          │
+│  └──────────────┘    └──────────────┘    └──────┬───────┘          │
+│                                                  │                   │
+│                                                  ▼                   │
+│                      ┌───────────────────────────────────────┐      │
+│                      │         Image Processing Pipeline      │      │
+│                      │  ┌─────────────┐    ┌─────────────┐   │      │
+│                      │  │   Gradio    │    │ Cloudinary  │   │      │
+│                      │  │  Try-On AI  │───►│   Storage   │   │      │
+│                      │  └─────────────┘    └─────────────┘   │      │
+│                      └───────────────────────────────────────┘      │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+## Project Structure
+
+```
+Virtual-Try-On/
+├── main.py                 # FastAPI application entry point
+├── requirements.txt        # Python dependencies
+├── Dockerfile             # Docker configuration
+├── .env                   # Environment variables (not in repo)
+└── README.md              # This file
+```
+
+## Author
+
+**Abhinav Sarkar**
+- GitHub: [@AbhinavSarkarr](https://github.com/AbhinavSarkarr)
+- LinkedIn: [abhinavsarkarrr](https://www.linkedin.com/in/abhinavsarkarrr)
+- Portfolio: [abhinav-ai-portfolio.lovable.app](https://abhinav-ai-portfolio.lovable.app/)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">
+  <strong>Try on clothes virtually through WhatsApp</strong>
+</p>
 
 
